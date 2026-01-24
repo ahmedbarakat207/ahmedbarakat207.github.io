@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ahmed Barakat</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <div id="desktop-area">
+        <div class="desktop-icon" onclick="openWindow('Future', 'future.html')">
+            <div class="icon-img"><img style="width: 50px;" src="Textures/future.png"></div>
+            <div class="icon-label">My Future</div>
+        </div>
+        </div>
+    </div>
+
+    <div id="start-menu">
+        <div class="start-sidebar"><span style="font-size: x-large;">Bimbow 96</span></div>
+        <div class="menu-list">
+            <a href="https://github.com/ahmedbarakat207" target="_blank">
+                <div class="menu-item"><img src="Textures/github.png" class="icon">Github</div>
+            </a>
+            <hr>
+            <a href="https://codeforces.com/profile/ahmedbarakat207" target="_blank">
+                <div class="menu-item"><img src="Textures/codeforces.png" class="icon">Codeforces</div>
+            </a>
+            <hr>
+            <a href="#" target="_blank">
+                <div class="menu-item"><img src="Textures/linkedin.png" class="icon">Linkedin</div>
+            </a>
+            <hr>
+            <a href="https://www.youtube.com/@ahmedbarakat2007" target="_blank">
+                <div class="menu-item"><img src="Textures/youtube.png" class="icon">Youtube</div>
+            </a>
+            <hr>
+            <div class="menu-item" onclick="openWindow('Download', 'projects.html')"><img src="Textures/future.png" class="icon">Projects</div>
+            <hr>
+            <div class="menu-item" onclick="openWindow('Terminal', 'terminal.html')"><img src="Textures/dos.png" class="icon">MS-DOS Prompt</div>
+            <hr>
+            <div class="menu-item" onclick="openWindow('Doom', 'doom/index.html')"><img src="Textures/doom.png" class="icon">Doom 95</div>
+            <hr>
+            <div class="menu-item" onclick="openWindow('Minecraft', 'https://classic.minecraft.net/')"><img src="Textures/minecraft.png" class="icon">Minecraft</div>
+        </div>
+    </div>
+
+    <div id="panel">
+        <div id="start-btn" onclick="toggleStartMenu()">
+            <img src="Textures/logo.png" style="height:16px;">
+            <span style="font-family:bold_font;">Start</span>
+        </div>
+        <div id="task-manager"></div>
+        <div id="clock">12:00 PM</div>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>

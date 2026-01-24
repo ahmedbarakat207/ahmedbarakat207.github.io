@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Terminal</title>
+    <style>
+        body {
+            background-color: #000000;
+            color: #00ff00;
+            font-family: 'Courier New', Courier, monospace;
+            margin: 0;
+            padding: 10px;
+            font-size: 14px;
+            overflow-x: hidden;
+        }
+        #output {
+            white-space: pre-wrap;
+            margin-bottom: 10px;
+        }
+        .input-line {
+            display: flex;
+        }
+        .prompt {
+            color: #00ff00;
+            margin-right: 5px;
+        }
+        #cmd-input {
+            background: transparent;
+            border: none;
+            color: #fff;
+            font-family: inherit;
+            font-size: inherit;
+            flex: 1;
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="output">Bimbow 96 Terminal [Version 96.0.0]<br>(c) Vectras Corporation. All rights reserved.<br><br>Type 'help' for a list of commands.<br><br></div>
+    <div class="input-line">
+        <span class="prompt">user@vectras:~$</span>
+        <input type="text" id="cmd-input" autofocus autocomplete="off">
+    </div>
+
+    <script src="terminal.js"></script>
+</body>
+</html>
