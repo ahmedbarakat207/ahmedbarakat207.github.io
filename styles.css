@@ -8,6 +8,7 @@
     --border-black: #000000;
     --title-blue: #000080;
     --text-color: #000000;
+    --panel-height: 30px;
 }
 @font-face {
   font-family: main_font; 
@@ -18,42 +19,61 @@
   src: url(W95font-Bold.otf); 
 }
 
+html, body {
+    background: transparent;
+}
+
 body {
     margin: 0;
     padding: 0;
     overflow: hidden;
     font-family: main_font; /* Closest to MS Sans Serif */
-     background-image: url("Textures/background.jpg"); /* Replace with your image path */
-  background-size: cover;
-  background-position: center; /* Centers the image within the container */
-  background-repeat: no-repeat; /* Prevents the image from repeating */
+        /* Wallpaper is sized to leave room for the taskbar: the image height
+             equals viewport minus the panel height so its bottom stays above the bar */
+        background-image: url("Textures/background.jpg");
+        background-size: auto calc(100vh - var(--panel-height));
+        background-position: center bottom;
+        background-repeat: no-repeat;
   width: 100%;
-  height: 100vh;
     user-select: none;
-    height: 100vh;
+        height: 100vh;
     color: var(--text-color);
 }
 
-a{
-    text-decoration: none;
-    color: black;
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    font-family: main_font; /* Closest to MS Sans Serif */
+    width: 100%;
+    height: 100vh;
+    user-select: none;
+    color: var(--text-color);
 }
 
-
-/* 3D Border Effects */
-.outset-border {
-    border: 2px solid;
-    border-color: var(--border-light) var(--border-black) var(--border-black) var(--border-light);
+/* Wallpaper layer that stops above the taskbar */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: var(--panel-height);
+    background-image: url("Textures/background.jpg");
+    background-size: cover;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    z-index: 0;
 }
 
-.inset-border {
-    border: 2px solid;
-    border-color: var(--border-dark) var(--border-light) var(--border-light) var(--border-dark);
+/* Ensure desktop content sits above the wallpaper */
+#desktop-area {
+    position: relative;
+    z-index: 1;
 }
-
 #desktop-area {
     width: 100%;
-    height: calc(100% - 32px);
+    height: calc(100% - var(--panel-height));
     position: relative;
     padding: 15px;
     display: flex;
@@ -149,7 +169,7 @@ a{
     position: absolute;
     bottom: 0;
     width: 100%;
-    height: 30px;
+    height: var(--panel-height);
     background: var(--window-silver);
     border-top: 2px solid var(--border-light);
     display: flex;
@@ -308,8 +328,8 @@ hr {
     }
 
     /* Taskbar shrinks to fit small screens */
+    :root { --panel-height: 34px; }
     #panel {
-        height: 34px;
         padding: 3px 4px;
     }
 
