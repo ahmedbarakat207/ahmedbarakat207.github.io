@@ -37,7 +37,7 @@ function openWindow(title, url) {
         win.style.left = '0';
         win.style.top = '0';
         win.style.width = '100vw';
-        win.style.height = 'calc(100vh - 30px)'; // 30px is your taskbar height
+        win.style.height = 'calc(100vh - 34px)'; // 30px is your taskbar height
     } else {
         // Cascading windows on desktop
         win.style.left = (40 + (Object.keys(windows).length * 20)) + 'px';
@@ -79,6 +79,7 @@ function openWindow(title, url) {
     
     focusWindow(id);
     document.getElementById('start-menu').classList.remove('open');
+    return id;
 }
 
 // --- Window State Functions ---

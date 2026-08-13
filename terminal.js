@@ -1,12 +1,6 @@
 const input = document.getElementById('cmd-input');
 const output = document.getElementById('output');
 const apps = {
-    'premium': { title: 'Premium', path: 'premium.html' }, 
-    'about': { title: 'About', path: 'about.html' },
-    'download': { title: 'Download', path: 'download.html' },
-    'gallery': { title: 'Gallery', path: 'gallary.html' },
-    'policies': { title: 'Policies', path: 'policies.html' },
-    'credits': { title: 'Credits', path: 'credits.html' },
     'terminal': { title: 'Terminal', path: 'terminal.html' },
     'minecraft': { title: 'Minecraft', path: 'https://classic.minecraft.net/' },
     'doom': { title: 'Doom', path: 'doom/index.html' },

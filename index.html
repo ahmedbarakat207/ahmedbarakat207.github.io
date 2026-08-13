@@ -55,5 +55,27 @@
     </div>
 
     <script src="scripts.js"></script>
+    <script>
+    // Handle requests from embedded pages to open project detail windows
+    window.addEventListener('message', function(ev){
+        try {
+            const d = ev.data;
+            if (!d || d.type !== 'openProjectDetail') return;
+            const title = d.title || 'Detail';
+            const html = d.html || '<div style="padding:12px;">No content</div>';
+            const id = openWindow(title, 'about:blank');
+            setTimeout(()=>{
+                const win = document.getElementById(id);
+                if (!win) return;
+                const iframe = win.querySelector('iframe');
+                if (!iframe) return;
+                const doc = iframe.contentDocument || iframe.contentWindow.document;
+                doc.open(); doc.write(html); doc.close();
+            }, 80);
+        } catch(e) {
+            console.error('openProjectDetail handler error', e);
+        }
+    });
+    </script>
 </body>
 </html>

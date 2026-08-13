@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Terminal</title>
     <style>
         body {
@@ -32,6 +33,11 @@
             font-size: inherit;
             flex: 1;
             outline: none;
+            min-width: 0;
+        }
+        @media (max-width: 768px) {
+            body { font-size: 13px; padding: 8px; }
+            #cmd-input { font-size: 16px; } /* keeps iOS Safari from auto-zooming on focus */
         }
     </style>
 </head>
